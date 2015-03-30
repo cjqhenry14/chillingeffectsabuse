@@ -34,6 +34,7 @@ public class readJson
       br.close();
     } catch (Exception e) {
       System.out.println("exception detected.");
+      System.out.println(e.toString());
     }
   }
 }

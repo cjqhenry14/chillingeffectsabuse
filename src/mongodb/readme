@@ -1,1 +1,1 @@
-This folder include the java code for uploading the data to mongoDB and so the queries.
+This folder include the java code for uploading the data to mongoDB and so the queries. Third party library used is MongoDB java version driver.

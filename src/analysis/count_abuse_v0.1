@@ -1,0 +1,113 @@
+#!/usr/bin/python
+
+import json
+import os
+
+descript_size_bound = 10;
+urls_size_bound = 10;
+works_size_bound = 10;
+
+dmca_num = 0;
+fake_num = 0;
+abuse_num = 0;
+abuse_list = [];#abuse file id
+
+def record_abuse(json_id):
+	global abuse_num, abuse_list;
+	abuse_num += 1;
+	#abuse_list.append(json_id);
+
+#(sender_name, principal_name, recipient_name) can't be null, "", "N/A"
+def check_name_islegal(dmca):
+	global abuse_num, abuse_list;
+
+	if('sender_name' not in dmca or 'principal_name' not in dmca or 'recipient_name' not in dmca):
+		return False;
+
+	if(dmca['sender_name'] == None or dmca['principal_name'] == None or dmca['recipient_name'] == None):
+		return False;
+	if(len(dmca['sender_name']) == 0 or len(dmca['principal_name']) == 0 or len(dmca['recipient_name']) == 0):
+		return False;
+	if(dmca['sender_name'] == "N/A" or dmca['principal_name'] == "N/A" or dmca['recipient_name'] == "N/A"):
+		return False;
+	
+	return True;
+
+#works: array size >0 and <= works_size_bound
+#description: can't be null, and length >= descript_size_bound
+#infringing_urls[] and copyrighted_urls[]: array size >0 and <= urls_size_bound
+def check_works_islegal(dmca):
+
+	works = dmca['works']
+	works_size = len(works)
+
+	if(works_size == 0 or works_size > works_size_bound):
+		return False;
+
+	for i in range(0, works_size):
+		cur_work = works[i];
+		if('description' not in cur_work or 
+			'infringing_urls' not in cur_work or 
+			'copyrighted_urls' not in cur_work):
+			return False;
+
+		if(cur_work['description'] == None or len(cur_work['description']) < descript_size_bound):
+			return False;
+
+		infringing_urls_size = len(cur_work['infringing_urls'])
+		if(infringing_urls_size == 0 or  infringing_urls_size > urls_size_bound):
+			return False;
+
+		copyrighted_urls_size = len(cur_work['copyrighted_urls'])
+		if(copyrighted_urls_size == 0 or  copyrighted_urls_size > urls_size_bound):
+			return False;
+
+
+	return True;
+
+def analyze_each_file(json_doc):
+	global dmca_num, illegal_name_num
+	#print json_doc
+	json_data = open(json_doc)
+	#json_data = open('CE/1035.json')
+	try:
+		data = json.load(json_data)
+	except ValueError, e:
+		return;
+
+	if 'dmca' not in data:
+		return;
+
+	dmca = data['dmca'];
+	dmca_num += 1;
+	#print data['dmca']['works'][0]['description']
+	if(check_name_islegal(dmca) == False):
+		record_abuse(dmca['id']);
+
+	elif(check_works_islegal(dmca) == False):
+		record_abuse(dmca['id']);
+	
+	
+	json_data.close();
+
+#scan work dir to check each JSON document.
+def scanDir(dir_name):
+	file_num = 0;
+	file_list = os.listdir(dir_name)
+	for json_doc in file_list:
+		#if(file_num == 1001):
+			#break;
+		if(json_doc != ".DS_Store"):
+			analyze_each_file(dir_name + '/' + json_doc);
+		#file_num += 1;
+
+if (__name__ == '__main__'):
+	#scanDir('CE')
+	scanDir('../ALL_CE')
+	print "dmca_num number: ", dmca_num
+	print "abuse number: ", abuse_num
+	print "abuse percent: ", abuse_num / float(dmca_num)
+	print "abuse list: "
+	'''for abu in abuse_list:
+		print abu, ',','''
+

@@ -1,0 +1,30 @@
+Topic 0th:
+	BPI   0.315504
+	Ltd_Member_Companies   0.195557
+	beatles   0.004917
+	eminem   0.004510
+	Ltd_Member_Companies_RIHANNA   0.002730
+Topic 1th:
+	Name   0.170986
+	Track   0.085420
+	Artist   0.079649
+	Album_Name   0.026603
+	feat   0.006328
+Topic 2th:
+	BPI   0.314326
+	Ltd_Member_Companies   0.211223
+	Ltd_Member_Companies_BRITNEY_SPEARS   0.003174
+	Ltd_Member_Companies_CELINE_DION   0.002975
+	heart   0.002958
+Topic 3th:
+	bol.com   0.064072
+	iTunes   0.049460
+	play.com   0.049460
+	THE   0.030757
+	Music   0.023833
+Topic 4th:
+	Image   0.077564
+	series   0.077564
+	title   0.074406
+	DMM.com_Labo   0.049430
+	Copyright   0.014694

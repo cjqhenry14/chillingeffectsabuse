@@ -1,0 +1,30 @@
+Topic 0th:
+	http   0.044942
+	work   0.030811
+	ECB   0.024755
+	England   0.023493
+	blog   0.018446
+Topic 1th:
+	site   0.061316
+	Google   0.041212
+	website   0.029935
+	sale   0.028709
+	products   0.028709
+Topic 2th:
+	Illegal   0.051368
+	services   0.035204
+	dvd   0.034491
+	websites   0.023794
+	sites   0.022130
+Topic 3th:
+	letter   0.014104
+	name   0.012344
+	company   0.011903
+	video   0.011903
+	resume   0.010583
+Topic 4th:
+	xbox360   0.158776
+	Copyright   0.012099
+	URL   0.009016
+	Owner   0.008760
+	google   0.008503

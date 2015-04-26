@@ -1,0 +1,30 @@
+Topic 0th:
+	work   0.060184
+	Name   0.042202
+	issue   0.040204
+	website   0.030658
+	site   0.023998
+Topic 1th:
+	xbox360   0.091898
+	Office   0.031046
+	Windows   0.014581
+	Game   0.009808
+	Studio   0.008853
+Topic 2th:
+	BPI   0.100998
+	http   0.030557
+	Box   0.026470
+	RIGHT_OWNER   0.014449
+	TITLE   0.014449
+Topic 3th:
+	Copyright   0.043918
+	Owner   0.036975
+	Work   0.036479
+	Ref   0.036231
+	GOTYE_SOMEBODY_THAT   0.014904
+Topic 4th:
+	series   0.050014
+	title   0.049831
+	Image   0.047824
+	Co.   0.038153
+	http   0.025746

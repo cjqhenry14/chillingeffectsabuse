@@ -1,0 +1,30 @@
+Topic 0th:
+	etc   0.051346
+	bol.com   0.049949
+	iTunes   0.036560
+	play.com   0.036560
+	Music   0.016146
+Topic 1th:
+	ANY   0.062326
+	XBOX360   0.036331
+	PS3   0.034168
+	WII   0.017735
+	PSP   0.017015
+Topic 2th:
+	Work   0.045657
+	Copyright   0.039847
+	Owner   0.039109
+	Ref   0.037910
+	Macmillan_Publishers_Ltd   0.032054
+Topic 3th:
+	BPI   0.353785
+	Ltd_Member_Companies   0.109283
+	Ltd_Member_Companies_BRITNEY_SPEARS   0.004315
+	2PAC   0.003703
+	Ltd_Member_Companies_BRUCE_SPRINGSTEEN   0.003404
+Topic 4th:
+	Name   0.117736
+	Image   0.076078
+	series   0.076078
+	title   0.073797
+	Track   0.059051
